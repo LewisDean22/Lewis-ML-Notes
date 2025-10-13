@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://LewisDean22.github.io/Lewis-ML-Notes/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://LewisDean22.github.io/Lewis-ML-Notes/fundamentals/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://LewisDean22.github.io/Lewis-ML-Notes/fundamentals/supervised_learning/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://LewisDean22.github.io/Lewis-ML-Notes/fundamentals/unsupervised_learning/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+</urlset>
