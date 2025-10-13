@@ -1,0 +1,89 @@
+# === SITE INFORMATION ===
+site_name: Lewis' ML Notes
+site_url: https://LewisDean22.github.io/Lewis-ML-Notes/
+site_author: Lewis Dean
+site_description: The machine learning knowledge base of Lewis Dean
+
+# === REPOSITORY ===
+repo_url: https://github.com/LewisDean22/Lewis-ML-Notes
+repo_name: Lewis' ML Repo
+
+# === THEME ===
+theme:
+  name: material
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    # Navigation
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.path
+    - navigation.tracking
+    # Table of contents
+    - toc.follow
+    # Search
+    - search.suggest
+    - search.highlight
+    # Content
+    - content.code.copy
+
+# === MARKDOWN EXTENSIONS ===
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - footnotes
+
+# === MATH SUPPORT ===
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# === PLUGINS ===
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# === NAVIGATION ===
+nav:
+  - Home: index.md
+  - Fundamentals:
+      - fundamentals/index.md
+      - Supervised Learning: fundamentals/supervised_learning.md
+      - Unsupervised Learning: fundamentals/unsupervised_learning.md
+  - Projects:
+      - projects/index.md
+
+# === FOOTER ===
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LewisDean22
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/lewis-michael-dean/
+
