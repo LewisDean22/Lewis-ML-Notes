@@ -1,0 +1,21 @@
+/* Justify main text, but keep titles, lists, and code left-aligned */
+.md-content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* extra-styles.css */
+.md-typeset .md-typeset__table {
+    display: block;
+}
+.md-typeset__table table:not([class]) {
+    display: table;
+}
+
+/* Style author lines below titles */
+.author {
+    font-size: 0.9em;       /* smaller text */
+    margin-top: -0.5em;     /* move closer to title */
+    margin-bottom: 1em;     /* optional spacing after */
+    color: #555555;         /* optional muted color */
+}
