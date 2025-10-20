@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# My Machine Learning Notes
+<p class="author">By Lewis Dean</p>
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+!!! Note "Welcome!"
+    Welcome to my work-in-progress **machine learning knowledge base**. Use the sidebar to navigate through different topics, or try the search bar above to look for keywords.
 
-## Commands
+## 📚 Docs Structure
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- ML Paradigms
+- Fundamental Algorithms
+- Clustering
+- Deep Learning

@@ -1,5 +1,5 @@
 # === SITE INFORMATION ===
-site_name: Lewis' ML Notes
+site_name: My Machine Learning Notes
 site_url: https://LewisDean22.github.io/Lewis-ML-Notes/
 site_author: Lewis Dean
 site_description: The machine learning knowledge base of Lewis Dean
@@ -31,7 +31,7 @@ theme:
     # Navigation
     # - navigation.tabs
     # - navigation.tabs.sticky
-    - navigation.indexes
+    # - navigation.indexes
     - navigation.path
     - navigation.tracking
     # Table of contents
@@ -63,6 +63,9 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
+extra_css:
+  - stylesheets/justify.css
+
 # === PLUGINS ===
 plugins:
   - search
@@ -72,12 +75,20 @@ plugins:
 # === NAVIGATION ===
 nav:
   - Home: index.md
-  - Fundamentals:
-      - fundamentals/index.md
-      - Supervised Learning: fundamentals/supervised_learning.md
-      - Unsupervised Learning: fundamentals/unsupervised_learning.md
-  - Projects:
-      - projects/index.md
+  - Concepts:
+      # - fundamentals/index.md
+      - ML Paradigms: concepts/ml_paradigms.md
+      - Fundamental Algorithms:
+          - KNN: concepts/fundamental_algorithms/knn.md
+          - Decision Trees: concepts/fundamental_algorithms/decision_trees.md
+      - Clustering:
+          - K Means Clustering: concepts/clustering/k_means.md
+          - Hierarchical Clustering: concepts/clustering/hierarchical_clustering.md
+      - Deep Learning:
+          - Neural Networks 101: concepts/deep_learning/neural_networks_101.md
+          - CNNs: concepts/deep_learning/cnn.md
+  # - Projects:
+  #     - projects/index.md
 
 # === FOOTER ===
 extra:
