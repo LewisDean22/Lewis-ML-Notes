@@ -3,6 +3,7 @@
 !!! quote "Sources"
     - [Mastering the Basics: Understanding Supervised and Unsupervised Learning Algorithms - Tech & Tales](https://techntales.medium.com/mastering-the-basics-understanding-supervised-and-unsupervised-learning-algorithms-0db403af7557)
     - [What is Semi-Supervised Learning? - IBM Technology](https://www.youtube.com/watch?v=C3Lr6Waw66g)
+    - [What is feature engineering? - IBM Think](https://www.ibm.com/think/topics/feature-engineering)
 
 ## What is Machine Learning?
 
@@ -48,13 +49,26 @@ An alternative encoding method is label-coding. For example, `"dog"=0`, `"cat"=1
 For more complicated images, image segmentation labels are used to point to where exactly the label applies within the image, e.g. which pixel region contains an animal of a given species.
 
 
-<!-- ## Feature Engineering
+## Feature Engineering[^3]
 
-https://www.ibm.com/think/topics/feature-engineering
+Feature engineering/extraction is the process of preparing the features (a subset of variables from a raw dataset) to use during ML training. Features can go beyond columns of a database, like some non-trivial construction from those columns—therefore, feature engineering can involve trial-and-error. Despite this, feature engineering is most successful when domain-specific knowledge is applied to construct valuable features that provide sufficient insight for a model to learn from.
 
-IBM article reference -->
+**Feature transformation[^3]:** This is when one feature is converted into another, often a format more easily processed by the ML algorithm, e.g. binning continuous data or one-hot encoding (described above).
+
+**Feature scaling[^3]:** If a feature has a wide range of possible values, it can limit how much the model can learn from being trained on only a small sample from the interval. One approach to tackling this is _min-max scaling_, in which all feature values, denoted by the set $\{f\}$, are normalised such that they lie in the $[0, 1]$ interval, forming the scaled set $\{f'\}$. This means $f_\text{min}$ must map to zero and $f_\text{max}$ must map to 1; the linear transformation achieving this is:
+
+$$
+f' = \frac{f - f_\text{min}}{f_\text{max} - f_\text{min}} \, .
+$$
+
+<!-- Z-score scaling used in dimensional reduction methods like Principal Component Analysis (PCA)[^3] (in which all features should have comparable scales). Based off of the z-distribution, in which the set of feature values is transformed to have a mean of 0 and std of 1. -->
+
+<!-- Are work in progress systems for automating feature engineering. -->
+
+!!! Tip "Does deep learning need feature engineering?"
+    The beauty of deep learning is that a small set of simple features can be fed into a the neural network architecture and higher-level "representations" of the labels are encoded during training[^3]. A convolutional neural network accrues representations of the objects its learning to recognise within images, meaning that rigid body transformations of the object in the image frame have reduced impact in classification.
 
 
 [^1]: Mastering the Basics: Understanding Supervised and Unsupervised Learning Algorithms - Tech & Tales, 2023, [Link](https://techntales.medium.com/mastering-the-basics-understanding-supervised-and-unsupervised-learning-algorithms-0db403af7557))
 [^2]: What is Semi-Supervised Learning? - IBM Technology, 2025, [Link](https://www.youtube.com/watch?v=C3Lr6Waw66g)
-
+[^3]: What is feature engineering? - IBM Think, accessed in 2025, [Link](https://www.ibm.com/think/topics/feature-engineering)

@@ -6,7 +6,9 @@
 
 ## 📚 Docs Structure
 
-- ML Paradigms
-- Fundamental Algorithms
-- Clustering
-- Deep Learning
+- Concepts
+    - ML Paradigms
+    - Fundamental Algorithms
+    - Clustering
+    - Deep Learning
+- Projects

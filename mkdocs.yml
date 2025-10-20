@@ -87,8 +87,8 @@ nav:
       - Deep Learning:
           - Neural Networks 101: concepts/deep_learning/neural_networks_101.md
           - CNNs: concepts/deep_learning/cnn.md
-  # - Projects:
-  #     - projects/index.md
+  - Projects:
+      - OpenAI Quiz Generator: projects/quiz_generator.md
 
 # === FOOTER ===
 extra:
