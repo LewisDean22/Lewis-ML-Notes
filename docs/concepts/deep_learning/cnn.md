@@ -1,0 +1,1 @@
+See GoodNotes doc first.

@@ -9,15 +9,25 @@
 
 The ultimate goal of machine learning (ML) is to train algorithms to accurately classify events as a function of known data about those events. For example, a model may be trained to predict tomorrow's weather based on time series of different atmospheric measurements.
 
-How does a machine learn, and how can we assess how successfully they do so? The learning process is necessarly split into two variations: supervised and unsupervised learning. Yet both variations require the chosen ML algorithm to be fed example data, reflecting the data to be inputted to the final, trained algorithm when making its predictions.
+How does a machine learn, and how can we assess how successfully they do so? The learning process is necessarly split into two variations: supervised and unsupervised learning. Both variations require the chosen ML algorithm to be fed example data, reflecting the data to be inputted to the final, trained algorithm when making its predictions.
 
 Using more training data improves the achievable accuracy of an ML model (to first order) as it offers more evidence of underlying trends which should be learned. Models will overfit to the limited sample available in a small dataset. Training data provided must be representative of the true population data to guarantee generalisability, but it must also be _clean_; adding noisy data may actually decrease prediction accuracy because the model begins to fit to noise!
 
-The example data for ML training is decomposed into two sets: the training and testing data. The former is used to incrementally optimise an algorithm's parameters towards making successful classifications, and the latter is then fed into the tuned model to evaluate to what extent the training process generalises to unseen data. A common train/test split proportion is 80/20.
+The example data for ML training is decomposed into two sets: the training and testing data. The former is used to incrementally optimise an algorithm's parameters towards making successful classifications, and the latter is then fed into the tuned model to evaluate how successfully the training process generalises to unseen data. A common train/test split proportion is 80/20.
+
+### Objective Functions
+
+An objective function is any function that an optimisation process seeks to extremise. In ML, this term broadly encompasses two related concepts:
+
+**Loss functions** (also called cost functions) are used *during training* to quantify how far the model's predictions are from the true values. The training process incrementally adjusts the model's weights to minimise this loss. Common examples include mean squared error (MSE) for regression tasks and cross-entropy for classification tasks. There is also the Kullback-Leibler divergence from information theory.
+
+**Metric functions** are used *during testing* to assess model performance, such as accuracy or precision.  Importantly, the training loss and evaluation metric are not always the same — a model might be
+trained to minimise cross-entropy but evaluated on classification accuracy.
+
 
 ## Supervised vs Unsupervised Learning
 
-For this training data, if each data entry is labelled with its correct classification, training can directly optimise prediction accuracy through comparison with the labels provided—this defines supervised learning. Instead, if the the true classifications are not included within the training/testing data, the model itself must identify patterns within the data facilitating the prediction of outcomes, or instead patterns which motivate the splitting of the dataset into insightful subgroups. This second scenario requires unsupervised ML algorithms, and given that the true labels are unknown, an accuracy metric cannot be used to quantify their implementation success. Below is a table of common supervised/unsupervised learning techniques[^1].
+Within the training data, if each data entry is labelled with its correct classification, training can directly optimise prediction accuracy through comparison with the labels provided - this defines supervised learning. Instead, if the the true classifications are not included within the training/testing data, the model itself must identify patterns within the data that facilitate the prediction of outcomes, or instead patterns which motivate the splitting of the dataset into insightful subgroups. This second scenario requires unsupervised ML algorithms, and given that the true labels are unknown, an accuracy metric cannot be used to quantify their implementation success. Below is a table of common supervised/unsupervised learning techniques[^1].
 
 | Supervised | Unsupervised |
 |-----------|-----------|
@@ -40,7 +50,7 @@ Both of these can be combined with a process known as active learning. Pseudolab
 
 ## How is data labelled?
 
-Suppose we wanted to train an algorithm to recognise the species of animals within an image. The data informing predictions would be the RGB values of each pixel (numerical quanties) and the label it is trying to predict would be a string of the animal species' name. Importantly, non-numerical labels must be encoded numerically,
+Suppose we wanted to train an algorithm to recognise the species of animals within an image. The data informing predictions would be the RGB values of each pixel (a matrix of numerical quanties) and the label it is trying to predict would be a string of the animal species' name. Importantly, non-numerical labels must be encoded numerically,
 
 One approach to this is one-hot encoding, in which unit vectors (of 0s and 1s) are used, with dimensions matching the number of classification types. 0s are said to be cold, whereas 1s are said to be hot. For a given class type, only one component is hot, whilst all the others are cold. Think of each species as a basis vector within a vector space of animal species.
 
@@ -48,14 +58,17 @@ An alternative encoding method is label-coding. For example, `"dog"=0`, `"cat"=1
 
 For more complicated images, image segmentation labels are used to point to where exactly the label applies within the image, e.g. which pixel region contains an animal of a given species.
 
+### Data Augmentation
+
+One way of boosting the available training data is through data augmentation, in which new data is created by modifying existing data. We might do this since, as we know, larger datasets in general reduce the likelihood of overfitting. For example, an image classifier could be given more images to train on by applying rotations, reflections, cropping, zooming, etc to the existing image dataset.
 
 ## Feature Engineering[^3]
 
-Feature engineering/extraction is the process of preparing the features (a subset of variables from a raw dataset) to use during ML training. Features can go beyond columns of a database, like some non-trivial construction from those columns—therefore, feature engineering can involve trial-and-error. Despite this, feature engineering is most successful when domain-specific knowledge is applied to construct valuable features that provide sufficient insight for a model to learn from.
+Feature engineering/extraction is the process of preparing the features (a subset of variables from a raw dataset) to use during ML training. Features can go beyond columns of a database, like some non-trivial construction from those columns, meaning feature engineering can involve trial-and-error. Despite this, feature engineering is most successful when domain-specific knowledge is applied to construct valuable features that provide sufficient insight for a model to learn from.
 
 **Feature transformation[^3]:** This is when one feature is converted into another, often a format more easily processed by the ML algorithm, e.g. binning continuous data or one-hot encoding (described above).
 
-**Feature scaling[^3]:** If a feature has a wide range of possible values, it can limit how much the model can learn from being trained on only a small sample from the interval. One approach to tackling this is _min-max scaling_, in which all feature values, denoted by the set $\{f\}$, are normalised such that they lie in the $[0, 1]$ interval, forming the scaled set $\{f'\}$. This means $f_\text{min}$ must map to zero and $f_\text{max}$ must map to 1; the linear transformation achieving this is:
+**Feature scaling[^3]:** If a feature has a wide range of possible values, it can limit how much the model can learn as its likely only being trained on a small sample from the interval. One approach to tackling this is _min-max scaling_, in which all feature values, denoted by the set $\{f\}$, are normalised such that they lie in the $[0, 1]$ interval, forming the scaled set $\{f'\}$. This means $f_\text{min}$ must map to zero and $f_\text{max}$ must map to 1; the linear transformation achieving this is:
 
 $$
 f' = \frac{f - f_\text{min}}{f_\text{max} - f_\text{min}} \, .
@@ -66,7 +79,7 @@ $$
 <!-- Are work in progress systems for automating feature engineering. -->
 
 !!! Tip "Does deep learning need feature engineering?"
-    The beauty of deep learning is that a small set of simple features can be fed into a the neural network architecture and higher-level "representations" of the labels are encoded during training[^3]. A convolutional neural network accrues representations of the objects its learning to recognise within images, meaning that rigid body transformations of the object in the image frame have reduced impact in classification.
+    The beauty of deep learning is that a small set of simple features can be fed into a the neural network architecture and higher-level "representations" of the labels are encoded during training[^3]. A convolutional neural network accrues representations of the objects its learning to recognise within images, meaning that rigid body transformations of the object in the image frame have reduced impact on classification.
 
 
 [^1]: Mastering the Basics: Understanding Supervised and Unsupervised Learning Algorithms - Tech & Tales, 2023, [Link](https://techntales.medium.com/mastering-the-basics-understanding-supervised-and-unsupervised-learning-algorithms-0db403af7557))

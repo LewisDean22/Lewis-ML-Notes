@@ -10,6 +10,8 @@ repo_name: Lewis' ML Repo
 
 # === THEME ===
 theme:
+  favicon: figures/teal_network_cropped.png
+  logo: figures/teal_network_cropped.png
   name: material
   font:
     text: Roboto
@@ -56,6 +58,8 @@ markdown_extensions:
       custom_checkbox: true
   - tables
   - footnotes
+  - attr_list
+  - md_in_html
 
 # === MATH SUPPORT ===
 extra_javascript:
@@ -78,6 +82,8 @@ nav:
   - Concepts:
       # - fundamentals/index.md
       - ML Paradigms: concepts/ml_paradigms.md
+      - Model Training: concepts/training.md
+      - Model Testing: concepts/testing.md
       - Fundamental Algorithms:
           - KNN: concepts/fundamental_algorithms/knn.md
           - Decision Trees: concepts/fundamental_algorithms/decision_trees.md
@@ -87,6 +93,7 @@ nav:
       - Deep Learning:
           - Neural Networks 101: concepts/deep_learning/neural_networks_101.md
           - CNNs: concepts/deep_learning/cnn.md
+          - RNNs: concepts/deep_learning/rnn.md
   - Projects:
       - OpenAI Quiz Generator: projects/quiz_generator.md
 
