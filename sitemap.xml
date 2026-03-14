@@ -2,38 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/ml_paradigms/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/testing/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/training/</loc>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/clustering/hierarchical_clustering/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/clustering/k_means/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/deep_learning/cnn/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/deep_learning/neural_networks_101/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/deep_learning/rnn/</loc>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/fundamental_algorithms/decision_trees/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/concepts/fundamental_algorithms/knn/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://LewisDean22.github.io/Lewis-ML-Notes/projects/quiz_generator/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
 </urlset>
